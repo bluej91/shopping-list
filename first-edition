@@ -1,0 +1,33 @@
+# make a list to hold onto items
+shopping_list = []
+
+print("What should we pick up at the store?")
+print("Enter 'Done' to stop adding items.")
+
+
+while True:
+  
+  new_item = input("> ") 
+  shopping_list.append(new_item)
+  # Checks for Help command, and removes from list
+  if new_item == "Help":
+      shopping_list.remove("Help")
+      commands = ["Help- Shows useable commands", "Done- Quits additions to list.", "Show- Shows items currently on list"]
+      
+      for tips in commands:
+          print(tips)
+  # Checks for Show command, and removes from list       
+  elif new_item == "Show":
+      shopping_list.remove("Show")
+      for items in shopping_list:
+        
+          print(items)
+  # Checks for Done command, and removes from list        
+  elif new_item == "Done":
+      shopping_list.remove("Done")
+      break
+    
+print("Here is your list:")
+
+for item in shopping_list:
+  print(item)
